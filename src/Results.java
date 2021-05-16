@@ -9,30 +9,27 @@ public class Results {
 //	Method 1 - displays the results that the person got for each exam and then the total mark. Try to make the output neat and bespoke for each exam.
 //	Method 2 - which finds and displays the percentage that the person received for the exams overall.
 	public static void main(String[] args) {
-		int physics = 129;
-		int chemistry = 115;
-		int biology = 110;
-		int total;
-		double perc;
+		int physics = 120;
+		int chemistry = 124;
+		int biology = 119;
+		int total = 450;
+		double perc = (physics + chemistry + biology)/4.5;
 		
-		total = display(physics, chemistry, biology);
-		perc = percentage(physics, chemistry, biology);
+		display(physics, chemistry, biology, total);
+		percentage(perc);
 
 	}
 	
-	public static int display(int p, int c, int b) {
+	public static void display(int p, int c, int b, int total) {
 		System.out.println("Physics: " + p);
 		System.out.println("Chemistry: " + c);
 		System.out.println("Biology: " + b);
 		
-		System.out.println("Total: " + (p+b+c));
-		return (p+b+c);
+		System.out.println("Total: " + (p+b+c)+"/"+total);
 	}
 	
-	public static double percentage(double p, double c, double b) {
-		double temp = (p+b+c)/4.5;
-		System.out.println("Percentage: " + temp);
-		return temp;
+	public static void percentage(double perc) {
+		System.out.println("Percentage: " + perc);
 	}
 
 }
